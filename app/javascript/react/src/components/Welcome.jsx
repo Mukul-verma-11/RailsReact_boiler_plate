@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as ReactDom from 'react-dom'
+import * as ReactDom from 'react-dom/client'
 import Home from './Home'
 
 
@@ -16,9 +16,9 @@ const Welcome = () => {
     )
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    ReactDom.render(<Welcome/>,document.getElementById('welcome'))
-})
+const root = ReactDom.createRoot(document.getElementById('welcome'))
+root.render(
+    <Welcome/>
+)
 
 export default Welcome
