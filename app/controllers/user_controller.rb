@@ -7,15 +7,18 @@ class UserController < ApplicationController
     end
 
     def create 
-        # byebug
-        puts "************************************"
-        puts params[:username] 
-        puts params[:password] 
         User.create(Username: params[:username], Password: params[:password])
-        # puts params.require(:user).permit(:username, :password)
-        puts "************************************"
-
         render html: "create"
+    end
+
+    def delete 
+        p "8888888888888888888888*****************" 
+        p params[:id]
+        user = User.find_by(id: params[:id])
+        user.destroy 
+        user.save
+        p "8888888888888888888888*****************" 
+        render html: 'delete'
     end
 
 end

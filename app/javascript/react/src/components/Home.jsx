@@ -20,12 +20,12 @@ const Home = () => {
 
   const handleUsername = (e) => {
     setUserName(e.target.value);
-    console.log(userName);
+    // console.log(userName);
   };
 
   const handlePassword = (e) => {
     setPassword(e.target.value);
-    console.log(password);
+    // console.log(password);
   };
 
   const submitForm = (e) => {
@@ -49,6 +49,28 @@ const Home = () => {
         console.log(error);
       });
   };
+
+  const handleDelete = (id) => {
+
+    const authenticityToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    setFlag(flag + 1)
+    console.log(id);
+    axios({
+      method: 'post',
+      url: `/user/delete/${id}`,
+      data : {id: id},
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': authenticityToken,
+      },
+    }).then((response) => {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+  }
 
   
 
@@ -75,6 +97,7 @@ const Home = () => {
         <div key={i}>
           <p key={i}>
             Username : {post.Username} , Password : {post.Password}
+          <button onClick={() => handleDelete(post.id)} btn_id = {post.id} key = {post.id} > DELETE {post.id}  </button>
           </p>
         </div>
       ))}
