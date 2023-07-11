@@ -1,0 +1,55 @@
+.delete_modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+    width: 100%;
+}
+
+.close_button{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    width: 90%;
+    padding: 5px;
+}
+
+.button_x{
+    margin: 4px;
+    height: 25px;
+    width: 25px;
+}
+
+.boxy{
+    border: 2px solid #751CF8;
+    background-color: #FF8451;
+    width:600px;
+    height: 200px;
+    position: absolute;
+}
+
+.update_input{
+    width: 80%;
+    height: 28px;
+}
+
+.update_button{
+    background-color: rgb(117, 27, 249);
+    width: 80%;
+    height: 34px;
+    color: white;
+    border: none;
+    letter-spacing: 2px;
+    transition-duration: 0.4s;
+}
+.update_button:hover{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #751CF8;
+
+}
+.update_label{
+    letter-spacing: 2px;
+}
