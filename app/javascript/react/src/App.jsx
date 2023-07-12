@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import Home from './Home'
+import Home from './components/Home'
 import { createRoot } from 'react-dom/client'
 
  
 
 
-const Welcome = () => {
+const App = () => {
     return (
         <div className='container' >
             
@@ -16,6 +16,6 @@ const Welcome = () => {
     )
 }
 
-createRoot(document.getElementById('welcome')).render(<Welcome/>)
+createRoot(document.getElementById('welcome')).render(<App/>)
 
-export default Welcome
+export default App

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../../../assets/stylesheets/Content.css";
 import axios from "axios";
-import Table from "./Table";
+import Table from "./Table/Table";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../../../assets/stylesheets/DeleteModal.css";
@@ -11,7 +11,7 @@ const Content = () => {
   const [input, setInput] = useState("");
   const [desc, setDesc] = useState("");
   const [data, setData] = useState([]);
-  const [selectedWorker, setSelectedWorker] = useState();
+  const [selectedWorker, setSelectedWorker] = useState(1);
   const [flag, setFlag] = useState(0);
   const [dataDeleted, setDalaDeleted] = useState(0);
   const [workers, setWorkers] = useState([]);
@@ -21,7 +21,7 @@ const Content = () => {
 
   useEffect(() => {
     axios
-      .get("/todos")
+      .get("/tasks")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
 
@@ -54,7 +54,7 @@ const Content = () => {
 
     axios({
       method: "put",
-      url: `/todos/update/${postID}`,
+      url: `/tasks/update/${postID}`,
       data: {
         task: {
           title: input,
@@ -124,7 +124,7 @@ const Content = () => {
           method: "post",
           url: "/create",
           data: {
-            task: {
+            tasker: {
               title: ValidInput,
               description: desc,
               worker_id: parseInt(selectedWorker),

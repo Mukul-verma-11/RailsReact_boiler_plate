@@ -60,7 +60,7 @@ const Table = ({ data, isDataDeleted, workers, updateTableData }) => {
     console.log(id);
     setDataToParent(dataToParent + 1);
 
-    await axios.delete(`todos/delete/${id}`, {
+    await axios.delete(`tasks/delete/${id}`, {
       headers: {
         "Content-Type": "application/json",
         "X-CSRF-Token": document.querySelector("meta[name='csrf-token']")

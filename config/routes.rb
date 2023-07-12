@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  post "create", to: "todo#create"
+  post "create", to: "task#create"
 
-  get "todos" , to: "todo#todos_data"
+  get "tasks" , to: "task#tasks_data"
   get "workers", to: "worker#index"
 
-  delete "todos/delete/:id" , to: "todo#destroy"
+  delete "tasks/delete/:id" , to: "task#destroy"
 
-  put "todos/update/:id", to: "todo#update"
+  put "tasks/update/:id", to: "task#update"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

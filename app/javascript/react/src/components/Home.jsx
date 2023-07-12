@@ -3,8 +3,8 @@ import * as React from 'react'
 import '../../../../assets/stylesheets/Home.css'
 import axios from 'axios' 
 import { useEffect,useState } from 'react'
-import Navbar from './NavBar'
-import Content from './Content'
+import Navbar from './nav_bar/NavBar'
+import Content from './midContent/Content'
 
 const Home = () => {
 
